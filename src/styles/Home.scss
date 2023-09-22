@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(19, 19, 19);
+}
+
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding-bottom: 40px;
+
+    &_title {
+        margin-top: 90px;
+        margin-bottom: 50px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}

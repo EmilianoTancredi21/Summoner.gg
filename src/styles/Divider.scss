@@ -1,0 +1,28 @@
+h2 {
+    color: #C28F2C;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.linea-divisora {
+    display: flex;
+    align-items: center;
+  }
+  
+  .linea-divisora::before,
+  .linea-divisora::after {
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    margin: 0 10px;
+    background-color: #C28F2C;
+  }
+
+
+
+hr {
+    border: 2px solid #C28F2C;
+    background: #C28F2C;
+    opacity: 1;
+}

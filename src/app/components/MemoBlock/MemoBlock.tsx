@@ -2,7 +2,7 @@ import React from "react";
 import "../../../styles/MemoBlock.scss";
 import Image from "next/image";
 
-const MemoBlock = ({ animating, handleMemoClick, memoBlock }) => (
+const MemoBlock = ({ animating, handleMemoClick, memoBlock }: any) => (
   <div
     className="memo-block"
     onClick={() =>

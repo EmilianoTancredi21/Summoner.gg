@@ -77,14 +77,14 @@ const ChampionDetail = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                {champion?.tags?.map((tag) => (
+                {champion?.tags?.map((tag: any) => (
                   <ChampionTags key={tag} tag={tag} />
                 ))}
               </Grid>
             </Grid>
           </Grid>
           <Grid item>
-            <Typography variant="p" component="div">
+            <Typography variant="h5" component="div">
               {champion?.lore}
             </Typography>
           </Grid>

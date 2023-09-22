@@ -19,7 +19,7 @@ export default function ChampionSkins({
     name: skin.name,
   }));
 
-  console.log(images.map((image) => image.name));
+  console.log(images.map((image: any) => image.name));
 
   const handleSlideComplete = (index: number) => {
     setCurrentSlide(index - 1);

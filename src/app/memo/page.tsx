@@ -31,7 +31,7 @@ const Memo = () => {
     return a;
   };
 
-  const handleMemoClick = (memoBlock) => {
+  const handleMemoClick = (memoBlock: any) => {
     const flippedMemoBlock = { ...memoBlock, flipped: true };
     let shuffledMemoBlocksCopy = [...shuffledMemoBlock];
     shuffledMemoBlocksCopy.splice(memoBlock.index, 1, flippedMemoBlock);

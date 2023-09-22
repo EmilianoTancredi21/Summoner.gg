@@ -85,7 +85,7 @@ const ChampionDetail = () => {
           </Grid>
           <Grid item>
             <Typography variant="p" component="div">
-              "{champion?.lore}"
+              {champion?.lore}
             </Typography>
           </Grid>
         </Grid>

@@ -83,7 +83,10 @@ export default function NavBar(props: Props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "#fff" }}>
-                <Link href={item === "Inicio" ? "/" : `/${item.toLowerCase()}`}>
+                <Link
+                  href={item === "Inicio" ? "/" : `/${item.toLowerCase()}`}
+                  className="navItems"
+                >
                   {item}
                 </Link>
               </Button>
@@ -111,7 +114,7 @@ export default function NavBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 1 }}>
         <Toolbar />
       </Box>
     </Box>

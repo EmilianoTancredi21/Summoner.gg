@@ -20,7 +20,7 @@ const tags = [
   "Marksman",
 ];
 
-const tagTranslations = {
+const tagTranslations: { [key: string]: string } = {
   All: "Todos",
   Support: "Soporte",
   Tank: "Tanque",
@@ -35,9 +35,17 @@ export function ChampsFilter() {
   const [champsByFilter, setChampsByFilter] = React.useState([]);
   const [filter, setFilter] = React.useState("All");
   const [input, setInput] = React.useState("");
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  // React.useEffect(() => {
+  //   inputRef.current.focus();
+  //   getChamps().then((data) => setChampsByFilter(Object.values(data)));
+  // }, []);
 
   React.useEffect(() => {
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
     getChamps().then((data) => setChampsByFilter(Object.values(data)));
   }, []);
 
@@ -69,7 +77,7 @@ export function ChampsFilter() {
     },
   });
 
-  const inputRef = React.useRef(null);
+  // const inputRef = React.useRef(null);
 
   const theme = createTheme({
     palette: {
@@ -138,7 +146,8 @@ export function ChampsFilter() {
             sx={{
               color: "#fff",
               fontFamily: "sans-serif",
-              textDecoration: filter === tag && "underline solid #0c59a1",
+              textDecoration:
+                filter === tag ? "underline solid #0c59a1" : "none",
               textUnderlineOffset: "5px",
               textDecorationThickness: "3px",
             }}

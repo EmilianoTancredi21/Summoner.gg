@@ -27,7 +27,9 @@ export default function ChampionSkins({
 
   return (
     <div>
-      <SectionDivider title="SKINS" />
+      <div className="linea-divisora">
+        <SectionDivider title="SKINS" />
+      </div>
       <div className="fullContainer">
         <h3 className="skin-text">{images[currentSlide]?.name}</h3>
         <SimpleImageSlider

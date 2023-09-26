@@ -8,6 +8,8 @@ h2 {
 .linea-divisora {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
   }
   
   .linea-divisora::before,
@@ -15,7 +17,7 @@ h2 {
     content: "";
     flex-grow: 1;
     height: 2px;
-    margin: 0 10px;
+    margin: 0 5px;
     background-color: #C28F2C;
   }
 
@@ -26,3 +28,5 @@ hr {
     background: #C28F2C;
     opacity: 1;
 }
+
+

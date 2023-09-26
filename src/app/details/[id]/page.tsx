@@ -19,18 +19,6 @@ const ChampionDetail = () => {
   let params = useParams();
   const championId = params.id;
 
-  // useEffect(() => {
-  //   if (championId)
-  //     axios
-  //       .get(
-  //         `https://ddragon.leagueoflegends.com/cdn/13.18.1/data/es_AR/champion/${championId}.json`
-  //       )
-  //       .then((response) => {
-  //         const data = response.data.data[championId];
-  //         setChampion(data);
-  //       });
-  // }, []);
-
   useEffect(() => {
     if (championId && typeof championId === "string") {
       axios
@@ -48,67 +36,51 @@ const ChampionDetail = () => {
     return <div></div>;
   }
   return (
-    <div className="home">
+    <div>
       <NavBar />
       <div
         className="champ_details_main"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(9, 11, 22, 0.329) 0%, #1e2234 100%), url('${horizontalImageChamp}${championId}_0.jpg')`,
+          width: "100vw",
         }}
       >
         <div className="champion-header">
-          <Grid container justifyContent="flex-end">
-            <Grid item></Grid>
-          </Grid>
-          <Grid container alignItems="start">
-            {champion?.id && (
-              <Grid item>
+          <div className="container row m-auto">
+            <div className="col-lg-auto col-md-12 d-flex align-items-start">
+              {champion?.id && (
                 <Image
                   src={`https://ddragon.leagueoflegends.com/cdn/13.18.1/img/champion/${champion?.id}.png`}
                   alt=""
                   width={90}
                   height={90}
-                  priority={true}
+                  style={{ paddingRight: "8px" }}
                 />
-              </Grid>
-            )}
-            <Grid item xs={12} lg={true} md={12}>
-              <Grid container direction="column" sx={{ mx: 3 }}>
-                <Grid item>
-                  <Typography variant="h5" component="div" sx={{ m: 0 }}>
-                    <strong>{champion?.name}</strong>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography
-                    variant="body1"
-                    component="div"
-                    sx={{ display: "block", whiteSpace: "nowrap" }}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    {champion?.title}
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  {champion?.tags?.map((tag: any) => (
-                    <ChampionTags key={tag} tag={tag} />
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Typography variant="h6" component="div">
-                {champion?.lore}
-              </Typography>
-            </Grid>
-          </Grid>
+              )}
+
+              <div className="mx-3">
+                <h5 className="m-0">
+                  <strong>{champion?.name}</strong>
+                </h5>
+                <span className="d-block text-nowrap">{champion?.title}</span>
+                {champion?.tags?.map((tag: string) => (
+                  <ChampionTags key={tag} tag={tag} />
+                ))}
+              </div>
+            </div>
+            <div className="col">
+              <p className="m-0 text-justify">{champion?.lore}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="home">
+      <section className="home">
         <ChampionSkills passive={champion?.passive} spells={champion?.spells} />
+      </section>
+      <section className="home">
         <ChamnpionSkins championId={champion?.id} skins={champion?.skins} />
         <Footer />
-      </div>
+      </section>
     </div>
   );
 };

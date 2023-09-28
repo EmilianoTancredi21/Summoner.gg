@@ -2,8 +2,8 @@
 
 .champs_grid {
   @include breakpoints(sm) {
-    max-width: 95%;
-    grid-column-gap: 25px;
+    max-width: 100%;
+    grid-column-gap: 35px;
     grid-row-gap: 30px;
   }
   max-width: 80%;
@@ -11,8 +11,8 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(7, 1fr) !important;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-column-gap: 20px;
+  // grid-template-columns: repeat(7, 1fr) !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-column-gap: 50px;
   grid-row-gap: 80px;
 }

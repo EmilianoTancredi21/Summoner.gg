@@ -26,7 +26,7 @@ function Home() {
       : "";
 
   return (
-    <div className="home">
+    <div className="">
       <NavBar />
       <div className="video-contenido">
         <video autoPlay loop muted>

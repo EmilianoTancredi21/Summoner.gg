@@ -7,6 +7,7 @@ import axios from "axios";
 import Image from "next/image";
 import "../../styles/Items.scss";
 import "../../styles/Divider.scss";
+import { ItemSearch } from "../components/ItemSearch/ItemSearch";
 
 interface Item {
   name: string | number;
@@ -61,9 +62,8 @@ const Items = (): JSX.Element => {
   return (
     <div className="body-items">
       <NavBar />
-      <div className="sectionDivider linea-divisora">
-        <SectionDivider title="ITEMS" />
-      </div>
+      <h1 className="items-title">Variedad de Items para todos los roles</h1>
+      <ItemSearch />
       <div className="containerItems">
         {itemsData.map((item, index) => (
           <div key={index} className="itemsInfo">

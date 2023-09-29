@@ -10,7 +10,6 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
 import ChampionTags from "@/app/components/ChampionTags/ChampioTags";
-import { Grid, Typography } from "@mui/material";
 import "../../../styles/ChampDetails.scss";
 import "../../../styles/Home.scss";
 
@@ -42,7 +41,7 @@ const ChampionDetail = () => {
         className="champ_details_main"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(9, 11, 22, 0.329) 0%, #1e2234 100%), url('${horizontalImageChamp}${championId}_0.jpg')`,
-          width: "100vw",
+          width: "90vw",
         }}
       >
         <div className="champion-header">

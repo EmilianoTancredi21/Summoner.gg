@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
-import SectionDivider from "../components/Divider/Divider";
 import axios from "axios";
 import Image from "next/image";
 import "../../styles/Items.scss";
@@ -10,9 +9,9 @@ import "../../styles/Divider.scss";
 import { ItemSearch } from "../components/ItemSearch/ItemSearch";
 
 interface Item {
-  name: string | number;
-  image: string | number;
-  gold: number | string;
+  name: string;
+  image: any;
+  gold: any;
   plaintext: string;
   description: string;
 }

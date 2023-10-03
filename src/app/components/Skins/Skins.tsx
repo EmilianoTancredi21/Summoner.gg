@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SimpleImageSlider from "react-simple-image-slider";
+import Carousel from "react-bootstrap/Carousel";
 import SectionDivider from "../Divider/Divider";
 import "../../../styles/skins.scss";
 
@@ -19,10 +19,8 @@ export default function ChampionSkins({
     name: skin.name,
   }));
 
-  console.log(images.map((image: any) => image.name));
-
-  const handleSlideComplete = (index: number) => {
-    setCurrentSlide(index - 1);
+  const handleSlideComplete = (selectedIndex: number) => {
+    setCurrentSlide(selectedIndex);
   };
 
   return (
@@ -32,16 +30,26 @@ export default function ChampionSkins({
       </div>
       <div className="fullContainer">
         <h3 className="skin-text">{images[currentSlide]?.name}</h3>
-        <SimpleImageSlider
-          width={1215}
-          height={717}
-          images={images}
-          showBullets={true}
-          showNavs={true}
-          autoPlay={true}
-          slideDuration={2}
-          onCompleteSlide={(index: number) => handleSlideComplete(index)}
-        />
+        <div className="carousel-container">
+          <Carousel
+            activeIndex={currentSlide}
+            onSelect={handleSlideComplete}
+            interval={2500}
+            indicators={true}
+            controls={true}
+            fade={true}
+          >
+            {images.map((image: any, index: number) => (
+              <Carousel.Item key={index}>
+                <img
+                  className="d-block w-100"
+                  src={image.url}
+                  alt={image.name}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </div>
   );

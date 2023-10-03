@@ -22,7 +22,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Inicio", "Campeones", "Items"];
+const navItems = ["Inicio", "Items"];
 
 export default function NavBar(props: Props) {
   const { window } = props;
@@ -104,7 +104,7 @@ export default function NavBar(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

@@ -41,7 +41,7 @@ const ChampionDetail = () => {
         className="champ_details_main"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(9, 11, 22, 0.329) 0%, #1e2234 100%), url('${horizontalImageChamp}${championId}_0.jpg')`,
-          width: "90vw",
+          width: "100vw",
         }}
       >
         <div className="champion-header">

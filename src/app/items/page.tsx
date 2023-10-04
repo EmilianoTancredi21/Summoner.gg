@@ -73,31 +73,20 @@ const Items = (): JSX.Element => {
       <h1 className="items-title">Variedad de Items para todos los roles</h1>
       {/* <ItemSearch onSearch={searchItems} /> */}
       <div className="containerItems">
-        {itemsData.length === 0 ? (
-          <div className="notFound">
-            <h3>No se encontraron resultados.</h3>
-          </div>
-        ) : (
-          itemsData.map((item, index) => (
-            <div key={index} className="itemsInfo">
-              <div className="imageContainer">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={64}
-                  height={64}
-                />
-                <div className="popup">
-                  <p>{item.description}</p>
-                  <p>Coste: {item.gold}</p>
-                </div>
-              </div>
-              <div className="itemsText">
-                <p>{item.name}</p>
+        {itemsData.map((item, index) => (
+          <div key={index} className="itemsInfo">
+            <div className="imageContainer">
+              <Image src={item.image} alt={item.name} width={64} height={64} />
+              <div className="popup">
+                <p>{item.description}</p>
+                <p>Coste: {item.gold}</p>
               </div>
             </div>
-          ))
-        )}
+            <div className="itemsText">
+              <p>{item.name}</p>
+            </div>
+          </div>
+        ))}
       </div>
       <Footer />
     </div>

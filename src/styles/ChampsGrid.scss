@@ -3,8 +3,10 @@
 .champs_grid {
   @include breakpoints(sm) {
     max-width: 100%;
-    grid-column-gap: 35px;
+    grid-column-gap: 15px;
     grid-row-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
   }
   max-width: 80%;
   max-height: 100%;

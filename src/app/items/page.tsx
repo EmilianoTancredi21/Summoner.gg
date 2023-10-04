@@ -71,14 +71,14 @@ const Items = (): JSX.Element => {
     <div className="body-items">
       <NavBar />
       <h1 className="items-title">Variedad de Items para todos los roles</h1>
-      <ItemSearch onSearch={searchItems} />
+      {/* <ItemSearch onSearch={searchItems} /> */}
       <div className="containerItems">
-        {filteredItems.length === 0 ? (
+        {itemsData.length === 0 ? (
           <div className="notFound">
             <h3>No se encontraron resultados.</h3>
           </div>
         ) : (
-          filteredItems.map((item, index) => (
+          itemsData.map((item, index) => (
             <div key={index} className="itemsInfo">
               <div className="imageContainer">
                 <Image

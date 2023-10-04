@@ -1,21 +1,17 @@
 import * as React from "react";
-
 import Box from "@mui/material/Box";
-
 import SearchIcon from "@mui/icons-material/Search";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 
-export const ItemSearch = () => {
-  const [input, setInput] = React.useState("");
-  const inputRef = React.useRef<HTMLInputElement>(null);
+export const ItemSearch = ({ onSearch }: any) => {
+  const [searchTerm, setSearchTerm] = React.useState("");
 
-  React.useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
+  const handleSearch = (event: any) => {
+    const { value } = event.target;
+    setSearchTerm(value);
+    onSearch(value);
+  };
   return (
     <div className="home">
       <Box
@@ -30,9 +26,9 @@ export const ItemSearch = () => {
       >
         {" "}
         <OutlinedInput
-          inputRef={inputRef}
-          onChange={(e) => setInput(e?.target?.value)}
           placeholder="Buscar item"
+          value={searchTerm}
+          onChange={handleSearch}
           type="text"
           sx={{
             color: "white",

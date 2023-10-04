@@ -24,6 +24,15 @@ const removeTags = (text: string): string => {
 const Items = (): JSX.Element => {
   const [itemsData, setItemsData] = useState<Item[]>([]);
 
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+
+  const searchItems = (searchTerm: string): void => {
+    const filtered = itemsData.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredItems(filtered);
+  };
+
   const traerItems = async (): Promise<void> => {
     try {
       const response = await axios.get(
@@ -62,22 +71,33 @@ const Items = (): JSX.Element => {
     <div className="body-items">
       <NavBar />
       <h1 className="items-title">Variedad de Items para todos los roles</h1>
-      <ItemSearch />
+      <ItemSearch onSearch={searchItems} />
       <div className="containerItems">
-        {itemsData.map((item, index) => (
-          <div key={index} className="itemsInfo">
-            <div className="imageContainer">
-              <Image src={item.image} alt={item.name} width={64} height={64} />
-              <div className="popup">
-                <p>{item.description}</p>
-                <p>Coste: {item.gold}</p>
+        {filteredItems.length === 0 ? (
+          <div className="notFound">
+            <h3>No se encontraron resultados.</h3>
+          </div>
+        ) : (
+          filteredItems.map((item, index) => (
+            <div key={index} className="itemsInfo">
+              <div className="imageContainer">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={64}
+                  height={64}
+                />
+                <div className="popup">
+                  <p>{item.description}</p>
+                  <p>Coste: {item.gold}</p>
+                </div>
+              </div>
+              <div className="itemsText">
+                <p>{item.name}</p>
               </div>
             </div>
-            <div className="itemsText">
-              <p>{item.name}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
       <Footer />
     </div>

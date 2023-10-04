@@ -9,6 +9,7 @@ body{
 }
 
 
+ 
 .home {
     display: flex;
     justify-content: center;
@@ -25,6 +26,10 @@ body{
         letter-spacing: 2px;
         text-transform: uppercase;
         color: #C28F2C !important;
+
+        @media (max-width: 768px) {
+            font-size: 60px;
+        }
     }
 
     &_title1 {
@@ -34,6 +39,10 @@ body{
         font-style: italic;
         letter-spacing: 2px;
         text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            font-size: 16px; 
+        }
     }
 
     &_subtitle {
@@ -43,6 +52,10 @@ body{
         text-align: center;
         width: 20%;
         margin-bottom: 50px;
+
+        @media (max-width: 768px) {
+            font-size: 12px; 
+            width: 50%; 
+        }
     }
 }
-

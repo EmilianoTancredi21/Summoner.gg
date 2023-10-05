@@ -1,3 +1,7 @@
+@import '../styles/index.scss';
+
+
+
 .containerItems {
     display: grid;
     justify-content: center;
@@ -10,6 +14,12 @@
     padding: 30px;
     border: 3px solid #C28F2C;
     border-radius: 10px;
+    @include breakpoints(sm) {
+      margin: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+      gap: 15px;
+      padding: 20px;
+    }
   }
   
   .containerItems img {
@@ -30,7 +40,45 @@
     display: block;
   }
 
-  .popup {
+  // .popup {
+  //   position: absolute;
+  //   color: white;
+  //   top: 50%;
+  //   left: calc(100% + 5px);
+  //   transform: translateY(-50%);
+  //   width: 250px;
+  //   max-height: 200px;
+  //   overflow: scroll;
+  //   background-color: rgba(0, 0, 0, 0.918);
+  //   padding: 10px;
+  //   border: 1px solid black;
+  //   border-radius: 5px;
+  //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  //   display: none;
+  //   z-index: 1;
+  //   object-fit: contain;
+  // }
+
+  .popup-left {
+    position: absolute;
+    color: white;
+    top: 50%;
+    right: calc(100% + 5px);
+    transform: translateY(-50%);
+    width: 250px;
+    max-height: 200px;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.918);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  .popup-right {
     position: absolute;
     color: white;
     top: 50%;
@@ -47,6 +95,21 @@
     display: none;
     z-index: 1;
     object-fit: contain;
+  }
+
+
+
+
+  @include breakpoints(sm){
+    // .popup-left {
+    //   right: calc(100% + 5px);
+    //   left: auto;
+    // }
+    
+    // .popup-right {
+    //   left: calc(100% + 5px);
+    //   right: auto;
+    // }
   }
 
   .popup {

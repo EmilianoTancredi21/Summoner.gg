@@ -6,7 +6,6 @@ import axios from "axios";
 import Image from "next/image";
 import "../../styles/Items.scss";
 import "../../styles/Divider.scss";
-import { ItemSearch } from "../components/ItemSearch/ItemSearch";
 
 interface Item {
   name: string;
@@ -71,13 +70,16 @@ const Items = (): JSX.Element => {
     <div className="body-items">
       <NavBar />
       <h1 className="items-title">Variedad de Items para todos los roles</h1>
-      {/* <ItemSearch onSearch={searchItems} /> */}
       <div className="containerItems">
         {itemsData.map((item, index) => (
           <div key={index} className="itemsInfo">
             <div className="imageContainer">
               <Image src={item.image} alt={item.name} width={64} height={64} />
-              <div className="popup">
+              <div
+                className={`popup ${
+                  index % 2 === 0 ? "popup-right" : "popup-left"
+                }`}
+              >
                 <p>{item.description}</p>
                 <p>Coste: {item.gold}</p>
               </div>

@@ -36,7 +36,7 @@ const Items = (): JSX.Element => {
   const traerItems = async (): Promise<void> => {
     try {
       const response = await axios.get(
-        "http://ddragon.leagueoflegends.com/cdn/13.19.1/data/es_AR/item.json"
+        "https://ddragon.leagueoflegends.com/cdn/13.19.1/data/es_AR/item.json"
       );
 
       const items: { [key: string]: Item } = response.data.data;
@@ -44,7 +44,7 @@ const Items = (): JSX.Element => {
         .sort((a, b) => a.name.localeCompare(b.name))
         .map((item) => ({
           name: removeTags(item.name),
-          image: `http://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${item.image.full}`,
+          image: `https://ddragon.leagueoflegends.com/cdn/13.19.1/img/item/${item.image.full}`,
           gold: item.gold.total,
           plaintext: item.plaintext,
           description: removeTags(item.description),

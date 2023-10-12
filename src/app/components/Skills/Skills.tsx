@@ -52,11 +52,11 @@ export default function ChampionSkills(props: any) {
     setActiveAbility(ability);
   };
 
-  const abilityNames = ["Passive:", "Q:", "W:", "E:", "R:"];
+  const abilityNames = ["Pasiva:", "Q:", "W:", "E:", "R:"];
   const abilityName = ["P1", "Q1", "W1", "E1", "R1"];
 
   return (
-    <div>
+    <div className="">
       <div className="linea-divisora">
         <SectionDivider title="HABILIDADES" />
       </div>

@@ -12,7 +12,6 @@ import axios from "axios";
 import ChampionTags from "@/app/components/ChampionTags/ChampioTags";
 import "../../../styles/ChampDetails.scss";
 import "../../../styles/Home.scss";
-import SectionDivider from "@/app/components/Divider/Divider";
 
 const ChampionDetail = () => {
   const [champion, setChampion] = useState<any>();

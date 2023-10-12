@@ -59,6 +59,11 @@
     margin-top: 15px;
   }
 
+
+  video {
+    width: 100% !important;
+    height: auto; 
+  }
 }
 
 @include breakpoints(md){
@@ -71,6 +76,10 @@
   }
 
 
+  video {
+    width: 100% !important;
+    height: auto; 
+  }
 }
 
 
@@ -162,8 +171,8 @@ padding: 60px;
 }
 
 video {
-  width: 100%;
-  height: auto; 
+  width: 600px;
+  height: 400px; 
 }
 
 .abilities-flex{

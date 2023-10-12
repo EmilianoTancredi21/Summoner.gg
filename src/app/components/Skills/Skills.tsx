@@ -7,7 +7,7 @@ import "../../../styles/Home.scss";
 import "../../../styles/Skills.scss";
 import SectionDivider from "../Divider/Divider";
 
-export default function ChampionSkills(props: any) {
+const ChampionSkills = (props: any) => {
   const [champion, setChampion] = useState<any>();
   const [videoError, setVideoError] = useState(false);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
@@ -32,20 +32,16 @@ export default function ChampionSkills(props: any) {
           const championKey = data.key.padStart(4, "0");
 
           setChampion({ ...data, key: championKey });
-          console.log(championKey);
 
           setActiveIndex(0); // Activa el passive por defecto
           setActiveAbility(props.passive); // Establece el passive como activo por defecto
+
+          videoRefs.current = videoRefs.current.slice(0, props.spells.length);
         });
     }
-  }, []);
-
-  useEffect(() => {
-    videoRefs.current = videoRefs.current.slice(0, props.spells.length);
-  }, [props.spells.length]);
+  }, [championId, props.passive, props.spells.length]);
 
   const championKey = champion?.key;
-  console.log(championKey);
 
   const handleAbilityClick = (index: number, ability: any) => {
     setActiveIndex(index);
@@ -154,4 +150,6 @@ export default function ChampionSkills(props: any) {
       </div>
     </div>
   );
-}
+};
+
+export default ChampionSkills;

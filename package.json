@@ -30,6 +30,7 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-simple-image-slider": "^2.4.1",
     "react-slick": "^0.29.0",
     "sass": "^1.66.1",
@@ -38,5 +39,8 @@
     "swiper": "^9.2.4",
     "typescript": "5.2.2",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.10"
   }
 }

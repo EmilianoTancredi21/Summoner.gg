@@ -1,30 +1,219 @@
+@import '../styles/index.scss';
 
-// .habilidades{
-//     display: flex; 
-//     justify-content: flex-start;
-//     width: 50%;
-//     gap: 10px;
-// }
+@font-face {
+    font-family: "Beaufort for LOL";
+    src: url("../fonts/BeaufortforLOL-BoldItalic.ttf");
+    src: url("../fonts/BeaufortforLOL-Bold.ttf");
+}
 
-
-// .container{
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     margin: 20px;
-//     gap: 10px;
-// }
-
-// .title{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
 
 
 .chipi{
     font-size: 15px;
     margin-top: 30px;
 }
+
+
+.videoError{
+    position: relative;
+    
+}
+
+.superpuesto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image1{
+
+  }
+
+  .image2{
+   width: 50%;
+   height: auto;
+   z-index: 1; 
+  }
+
+  .text-error{
+    font-family: "Beaufort for LOL" ;
+    text-align: center;
+    width: 80%;
+    margin-top: 15px;
+  }
+
+//////////////////////////////////////////////////
+
+
+@include breakpoints(sm){
+  .sec2{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 80;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include breakpoints(md){
+  .sec2{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 80;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.sec2 {
+ padding: 80px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.sec2 h2 {
+  max-width: calc(1024px / 2);
+  margin: auto;
+  padding: 20px;
+  font-size: 56px;
+  font-style: italic;
+  font-family: serif;
+}
+
+.sec2 .abilities-wrapper,
+.sec2 .ability-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec2 .abilities-wrapper {
+  min-width: 50%;
+}
+
+.sec2 .ability-list {
+  justify-content: flex-start;
+  padding: 0 calc((100% - (1024px / 2)) / 2);
+  border-bottom: 1px solid #394048;
+}
+
+.sec2 .ability-list .ability-item {
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.sec2 .ability-list .ability-item::before,
+.sec2 .ability-list .ability-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #394048;
+  transition: .25s;
+}
+
+.sec2 .ability-list .ability-item::after {
+  width: 2px;
+  height: 40px;
+  z-index: -1;
+}
+
+.sec2 .ability-list .ability-item.active::before,
+.sec2 .ability-list .ability-item:hover::before,
+.sec2 .ability-list .ability-item.active::after,
+.sec2 .ability-list .ability-item:hover::after {
+  background-color: #d0a85c;
+}
+
+.sec2 .ability-list .ability-item img {
+  padding: 5px;
+  border: 2px solid transparent;
+  transition: .25s;
+}
+
+.sec2 .ability-list .ability-item.active img,
+.sec2 .ability-list .ability-item:hover img {
+  transform: translateY(-10px);
+  border: 2px solid #d0a85c;
+}
+
+.ability-info {
+  
+  max-width: calc(1024px / 2);
+  padding: 20px;
+  // margin: auto;
+  transition: 1s;
+}
+
+.ability-info .ability-info-type {
+  color: #e7e7e7;
+  font-size: 10px;
+  font-family: "Beaufort for LOL" ;
+}
+
+.ability-info .ability-info-name {
+  margin: 5px 0;
+  font-size: 18px;
+  font-family: "Beaufort for LOL" ;
+}
+
+.abilities-info video {
+  aspect-ratio: 16/9;
+  width: calc(1024px / 2);
+  max-width: calc(1024px / 2);
+  height: 100%;
+  margin: auto;
+  padding-right: 80px;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+
+
+
+
+.ability-wrapper,
+.ability-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.video-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%; /* El video ocupará todo el ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente según la proporción original del video */
+}
+
+.abilities-flex{
+  display: flex;
+}
+
+.abilities-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Resto de estilos según tus necesidades */
+
+

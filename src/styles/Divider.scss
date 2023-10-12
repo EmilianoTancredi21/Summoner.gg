@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("../fonts/BeaufortforLOL-BoldItalic.ttf");
+  src: url("../fonts/BeaufortforLOL-Bold.ttf");
+}
+
 h2 {
     color: #C28F2C;
     font-weight: bold;
     text-align: center;
     margin: 0 10px;
+    font-family: "Beaufort for LOL" ;
 }
 
 .linea-divisora {

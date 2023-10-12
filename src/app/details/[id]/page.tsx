@@ -12,6 +12,7 @@ import axios from "axios";
 import ChampionTags from "@/app/components/ChampionTags/ChampioTags";
 import "../../../styles/ChampDetails.scss";
 import "../../../styles/Home.scss";
+import SectionDivider from "@/app/components/Divider/Divider";
 
 const ChampionDetail = () => {
   const [champion, setChampion] = useState<any>();
@@ -26,7 +27,11 @@ const ChampionDetail = () => {
         )
         .then((response) => {
           const data = response.data.data[championId];
-          setChampion(data);
+          const championKey = data.key.padStart(4, "0");
+
+          setChampion({ ...data, key: championKey });
+          console.log(championKey);
+          // setChampion(data);
         });
     }
   }, []);
@@ -34,6 +39,17 @@ const ChampionDetail = () => {
   if (!champion) {
     return <div></div>;
   }
+
+  const championKey = champion?.key;
+
+  const videoUrls = {
+    passive: `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_P1.webm`,
+    qAbility: `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_Q1.webm`,
+    wAbility: `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_W1.webm`,
+    eAbility: `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_E1.webm`,
+    rAbility: `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_R1.webm`,
+  };
+
   return (
     <div>
       <NavBar />
@@ -74,7 +90,12 @@ const ChampionDetail = () => {
         </div>
       </div>
       <section className="home">
-        <ChampionSkills passive={champion?.passive} spells={champion?.spells} />
+        <ChampionSkills
+          passive={champion?.passive}
+          spells={champion?.spells}
+          championId={championId}
+          videoUrls={videoUrls}
+        />
       </section>
       <section className="home">
         <ChamnpionSkins championId={champion?.id} skins={champion?.skins} />

@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import "../../../styles/Home.scss";
 import "../../../styles/Skills.scss";
 import SectionDivider from "../Divider/Divider";
+import ReactPlayer from "react-player/lazy";
 
 const ChampionSkills = (props: any) => {
   const [champion, setChampion] = useState<any>();
@@ -140,7 +141,7 @@ const ChampionSkills = (props: any) => {
               controls
               onError={handleVideoError}
               key={activeIndex}
-              preload="auto"
+              autoPlay={true}
             >
               {championKey && (
                 <source

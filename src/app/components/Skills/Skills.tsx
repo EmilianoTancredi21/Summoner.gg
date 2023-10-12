@@ -136,7 +136,12 @@ const ChampionSkills = (props: any) => {
               </div>
             </div>
           ) : (
-            <video controls onError={handleVideoError} key={activeIndex}>
+            <video
+              controls
+              onError={handleVideoError}
+              key={activeIndex}
+              preload="auto"
+            >
               {championKey && (
                 <source
                   src={`https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_${abilityName[activeIndex]}.webm`}

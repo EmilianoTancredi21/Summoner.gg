@@ -10,7 +10,7 @@ interface TipsProps {
 
 const Tips: React.FC<TipsProps> = ({ allyTips, enemyTips, championName }) => {
   return (
-    <div className="container">
+    <div className="">
       <div className="linea-divisora">
         <SectionDivider title="TIPS" />
       </div>

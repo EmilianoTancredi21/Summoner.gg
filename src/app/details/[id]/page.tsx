@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer/Footer";
 import NavBar from "@/app/components/NavBar/NavBar";
 import ChamnpionSkins from "@/app/components/Skins/Skins";
 import ChampionSkills from "@/app/components/Skills/Skills";
+import Tips from "@/app/components/Tips/Tips";
 import { horizontalImageChamp } from "@/helpers/apis";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
@@ -88,6 +89,13 @@ const ChampionDetail = () => {
           </div>
         </div>
       </div>
+      <section className="home">
+        <Tips
+          allyTips={champion?.allytips}
+          enemyTips={champion?.enemytips}
+          championName={champion?.name}
+        />
+      </section>
       <section className="home">
         <ChampionSkills
           passive={champion?.passive}

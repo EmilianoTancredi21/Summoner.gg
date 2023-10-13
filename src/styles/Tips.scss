@@ -1,0 +1,32 @@
+@import '../styles/index.scss';
+
+@font-face {
+    font-family: "Beaufort for LOL";
+    src: url("../fonts/BeaufortforLOL-Regular.ttf")
+}
+
+
+.tips{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+
+.tips h4{
+    font-family: "Beaufort for LOL";
+    font-weight: 600;
+}
+
+.tips ul li {
+    font-family: "Beaufort for LOL";
+    font-size: 18px;
+    margin: 5px;
+}
+
+.ally{
+    color: green;
+}
+
+.enemy{
+    color: red;
+}

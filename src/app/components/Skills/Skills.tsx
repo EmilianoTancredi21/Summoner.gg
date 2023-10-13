@@ -52,7 +52,7 @@ const ChampionSkills = (props: any) => {
   const abilityName = ["P1", "Q1", "W1", "E1", "R1"];
 
   return (
-    <div className="">
+    <div className="container">
       <div className="linea-divisora">
         <SectionDivider title="HABILIDADES" />
       </div>

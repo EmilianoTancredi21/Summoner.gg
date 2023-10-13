@@ -5,6 +5,13 @@
     src: url("../fonts/BeaufortforLOL-Regular.ttf")
 }
 
+@include breakpoints(sm){
+
+    .tips h4{
+        text-align: center;
+    }
+}
+
 
 .tips{
     width: 100%;

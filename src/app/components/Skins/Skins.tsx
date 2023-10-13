@@ -24,7 +24,7 @@ export default function ChampionSkins({
   };
 
   return (
-    <div className="container">
+    <div className="">
       <div className="linea-divisora">
         <SectionDivider title="SKINS" />
       </div>

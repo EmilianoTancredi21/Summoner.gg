@@ -9,8 +9,8 @@
 
 .videoError{
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
 }
 
 .superpuesto {
@@ -30,6 +30,8 @@
    height: auto;
    z-index: 1; 
   }
+
+
 
   .text-error{
     font-family: "Beaufort for LOL" ;
@@ -65,6 +67,11 @@
     width: 100% !important;
     height: auto; 
   }
+
+  .image1{
+    width: 100%;
+    height: 400px;
+  }
 }
 
 @include breakpoints(md){
@@ -80,6 +87,11 @@
   video {
     width: 100% !important;
     height: auto; 
+  }
+
+  .image1{
+    width: 600px;
+    height: 400px;
   }
 }
 

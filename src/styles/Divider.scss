@@ -21,13 +21,15 @@ h2 {
     align-items: center;
     justify-content: center;
     max-width: 1215px;
+    width: 100%;
+    margin: 0px auto;
   }
   
   .linea-divisora::before,
   .linea-divisora::after {
     content: "";
     flex-grow: 1;
-    height: 2px;
+    height: 2px !important;
     margin: 0 5px;
     background-color: #C28F2C;
   }

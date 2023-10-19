@@ -10,9 +10,9 @@ interface TipsProps {
 
 const Tips: React.FC<TipsProps> = ({ allyTips, enemyTips, championName }) => {
   return (
-    <div className="">
+    <div className="tipsContainer">
       <div className="linea-divisora">
-        <SectionDivider title="TIPS" />
+        <SectionDivider title="CONSEJOS" />
       </div>
       <div className="tips">
         <h4 className="ally">{`Jugando con ${championName}`}</h4>
@@ -22,12 +22,9 @@ const Tips: React.FC<TipsProps> = ({ allyTips, enemyTips, championName }) => {
               allyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
           </ul>
         ) : (
-          <ul>
-            <li>
-              Vaya... parece que los tips sobre este campeón no están
-              disponibles.
-            </li>
-          </ul>
+          <p className="tipsNotFound">
+            Vaya... parece que los tips sobre este campeón no están disponibles.
+          </p>
         )}
         <h4 className="enemy">{`Jugando contra ${championName}`}</h4>
         {enemyTips.length > 0 ? (
@@ -36,12 +33,9 @@ const Tips: React.FC<TipsProps> = ({ allyTips, enemyTips, championName }) => {
               enemyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
           </ul>
         ) : (
-          <ul>
-            <li>
-              Vaya... parece que los tips sobre este campeón no están
-              disponibles.
-            </li>
-          </ul>
+          <p className="tipsNotFound">
+            Vaya... parece que los tips sobre este campeón no están disponibles.
+          </p>
         )}
       </div>
     </div>

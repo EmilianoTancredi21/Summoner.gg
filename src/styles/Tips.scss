@@ -13,6 +13,18 @@
 
 }
 
+.tipsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tipsNotFound{
+    font-family: "Beaufort for LOL";
+    font-size: 18px;
+}
 
 
 .tips{

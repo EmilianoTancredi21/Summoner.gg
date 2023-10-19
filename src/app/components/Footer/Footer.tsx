@@ -9,6 +9,7 @@ const Footer = () => {
         League of Legends y PvP.net son marcas comerciales o marcas registradas
         de Riot Games, Inc.
       </p>
+      <p className="text-center">Hecho por Tancredi Emiliano 2023</p>
     </div>
   );
 };

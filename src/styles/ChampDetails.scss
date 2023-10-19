@@ -41,5 +41,22 @@ body {
     width: 100% !important;
     }
 
+    .back-to-home{
+        display: none;
+    }
+
 }
 
+
+.back-to-home {
+    position: fixed;
+    top: 150px;
+    right: 100px;
+    z-index: 9999;
+    background-color:rgba(169, 169, 169, 0.068);
+    border-radius: 100%;
+  }
+  
+  .back-to-home:hover{
+    background-color:rgba(169, 169, 169, 0.158);
+  }

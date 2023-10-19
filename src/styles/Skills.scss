@@ -9,7 +9,8 @@
 
 .videoError{
     position: relative;
-    
+    width: 600px;
+    height: 400px;
 }
 
 .superpuesto {
@@ -176,6 +177,9 @@ video {
   object-fit: cover;
   object-position: center center;
 }
+
+
+
 
 .abilities-flex{
   display: flex;

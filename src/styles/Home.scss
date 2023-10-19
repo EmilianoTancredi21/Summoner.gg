@@ -11,6 +11,7 @@ body{
 
  
 .home {
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,7 +22,7 @@ body{
     &_title {
         margin-bottom: 30px;
         font-size: 120px;
-        font-family: "Beaufort for LOL", sans-serif;
+        font-family: "Beaufort for LOL";
         font-style: italic;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -35,18 +36,18 @@ body{
     &_title1 {
         margin-top: 90px;
         font-size: 24px;
-        font-family: "Beaufort for LOL", sans-serif;
+        font-family: "Beaufort for LOL";
         font-style: italic;
         letter-spacing: 2px;
         text-transform: uppercase;
 
         @media (max-width: 768px) {
-            font-size: 16px; 
+            font-size: 20px; 
         }
     }
 
     &_subtitle {
-        font-size: 16px;
+        font-size: 18px;
         font-family: "Beaufort for LOL", sans-serif;
         font-weight: 100;
         text-align: center;
@@ -54,8 +55,8 @@ body{
         margin-bottom: 50px;
 
         @media (max-width: 768px) {
-            font-size: 12px; 
-            width: 50%; 
+            font-size: 15px; 
+            width: 60%; 
         }
     }
 }

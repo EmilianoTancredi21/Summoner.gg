@@ -10,12 +10,14 @@
     .tips h4{
         text-align: center;
     }
+
 }
+
 
 
 .tips{
     width: 100%;
-    height: auto;
+    max-width: 1215px;
     padding: 15px;
 }
 
@@ -37,3 +39,8 @@
 .enemy{
     color: rgb(190, 0, 0);
 }
+
+
+
+
+

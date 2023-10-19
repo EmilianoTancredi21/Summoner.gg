@@ -13,9 +13,10 @@ const ChampionSkills = (props: any) => {
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeAbility, setActiveAbility] = useState<any>(props.passive);
+  const [errorIndex, setErrorIndex] = useState(-1);
 
-  const handleVideoError = () => {
-    setVideoError(true);
+  const handleVideoError = (index: number) => {
+    setErrorIndex(index);
   };
 
   let params = useParams();
@@ -115,13 +116,13 @@ const ChampionSkills = (props: any) => {
           )}
         </div>
         <div className="video-container">
-          {videoError ? (
+          {errorIndex === activeIndex ? (
             <div className="videoError">
               <Image
                 src="https://res.cloudinary.com/dg8awhbvm/image/upload/v1696535297/no-ability-background-b82287ba3e7f3b6af9cde0a994af0829_mm5lqe.jpg"
                 alt=""
-                width={300}
-                height={200}
+                width={600}
+                height={400}
                 className="image1"
               />
               <div className="superpuesto">
@@ -136,7 +137,11 @@ const ChampionSkills = (props: any) => {
               </div>
             </div>
           ) : (
-            <video controls onError={handleVideoError} key={activeIndex}>
+            <video
+              controls
+              onError={() => handleVideoError(activeIndex)}
+              key={activeIndex}
+            >
               {championKey && (
                 <source
                   src={`https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey}/ability_${championKey}_${abilityName[activeIndex]}.webm`}

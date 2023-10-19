@@ -16,15 +16,33 @@ const Tips: React.FC<TipsProps> = ({ allyTips, enemyTips, championName }) => {
       </div>
       <div className="tips">
         <h4 className="ally">{`Jugando con ${championName}`}</h4>
-        <ul>
-          {allyTips &&
-            allyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
-        </ul>
+        {allyTips.length > 0 ? (
+          <ul>
+            {allyTips &&
+              allyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              Vaya... parece que los tips sobre este campeón no están
+              disponibles.
+            </li>
+          </ul>
+        )}
         <h4 className="enemy">{`Jugando contra ${championName}`}</h4>
-        <ul>
-          {enemyTips &&
-            enemyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
-        </ul>
+        {enemyTips.length > 0 ? (
+          <ul>
+            {enemyTips &&
+              enemyTips.map((tip, index) => <li key={index}>● {tip}</li>)}
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              Vaya... parece que los tips sobre este campeón no están
+              disponibles.
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );

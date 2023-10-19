@@ -9,6 +9,8 @@ import { horizontalImageChamp } from "@/helpers/apis";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowBack, FirstPage } from "@mui/icons-material";
 import axios from "axios";
 import ChampionTags from "@/app/components/ChampionTags/ChampioTags";
 import "../../../styles/ChampDetails.scss";
@@ -88,6 +90,11 @@ const ChampionDetail = () => {
             </div>
           </div>
         </div>
+        <Link href={"/"}>
+          <button className="back-to-home">
+            <ArrowBack fontSize="large" />
+          </button>
+        </Link>
       </div>
       <section className="home">
         <Tips
